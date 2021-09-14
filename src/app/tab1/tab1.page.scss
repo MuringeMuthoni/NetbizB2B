@@ -1,0 +1,36 @@
+
+.topslides{
+  height: 100%;
+  flex-direction: column;
+  width: 100%;
+ // border-radius:20px;
+}
+
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center; 
+  padding: 0px;
+  margin-left: 15px;
+ margin-right: 15px;
+  width: 100%;
+  
+}
+
+.box {
+  display: flex;
+}
+
+.steps {
+  background: transparent;
+  width:100%;
+  padding: 1px;
+  max-height: 80px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.pro_images{
+  margin-left: 1px;margin-top: 2px;margin-bottom: 5px; border-radius:10px;
+}

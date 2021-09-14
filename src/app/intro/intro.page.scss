@@ -1,0 +1,128 @@
+
+  ion-card {
+    position: relative;
+    text-align: center;
+
+    
+  }
+
+ 
+
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+  .bt{
+   
+    
+    width: 50px;
+    text-align: center;
+    justify-content: center;
+}
+
+ion-slide {
+  height: 100vh;
+  flex-direction: column;
+  
+}
+
+// ion-img {
+//   max-width: 50vw;
+//   max-height: 50vh;
+//   overflow: hidden;
+// }
+
+
+
+.step-two {
+ // background: rgb(56, 176, 232);
+  padding:5px;
+  //rgb(63, 68, 75);
+  // rgb(134, 155, 177);
+
+}
+
+.step-three {
+ // --background: linear-gradient(197deg, rgb(245, 192, 17) 0%, rgb(219, 150, 20) 13.5%, rgb(222, 167, 73) 33.33%, rgba(209, 198, 79) 100%) !important;
+//  background: rgb(216, 161, 58);
+  padding:5px;
+}
+
+// .stepthree {
+//   // --background: linear-gradient(197deg, rgb(245, 192, 17) 0%, rgb(219, 150, 20) 13.5%, rgb(222, 167, 73) 33.33%, rgba(209, 198, 79) 100%) !important;
+//   // background: #4285F4;
+//    padding:5px;
+//  }
+ 
+
+
+ .steptwo {
+  // --background: linear-gradient(197deg, rgb(245, 192, 17) 0%, rgb(219, 150, 20) 13.5%, rgb(222, 167, 73) 33.33%, rgba(209, 198, 79) 100%) !important;
+  // background: #ff9900 ;
+   padding:5px;
+ }
+ 
+
+
+.h{
+  
+  color:rgb(19, 18, 17);
+  
+}
+ion-slides {
+  --bullet-background: rgb(10, 9, 56);
+  --bullet-background-active: #694d9c;
+}
+ion-textarea{
+ height: 10px;
+}
+.backBtn{
+  position: absolute;
+  left: 20vw;
+  top: 40vh;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  border: none;
+  background: red;
+}
+
+.nextBtn{
+  position: absolute;
+  right: 20vw;
+  top: 40vh;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  border: none;
+  background: green;
+}
+
+.btngoods {
+  width: 95%;
+  text-align: center;
+  height: 3rem;
+  font-size: 1.2em;
+  font-weight: bold;   
+  background-color: #f7e6cfb2;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);   
+
+  &.activated {
+    background-color: rgb(220, 220, 220);
+    
+  }
+}

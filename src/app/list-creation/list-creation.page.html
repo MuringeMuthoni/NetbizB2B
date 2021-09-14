@@ -1,0 +1,59 @@
+<ion-header #header >
+  <ion-toolbar   >
+   
+      <div style="text-align: center;width: 98%;margin-top: 0.5px;margin-left: 0.5px;margin-right: 5px;padding-right: 5px;">
+        <ion-grid style="width: 100%;">
+          <ion-row  >  
+            <ion-col push-md="1"  align-self: start  style="align-items: left;" >                  
+              <div   style="text-align: left;width: 100%;"   >  
+                <img style="height: 30px;align-self: left;" src = "assets/netbiz logo 1.png" >
+                </div>            
+            </ion-col>
+
+             
+
+              <ion-col size="1"  style="text-align: left;margin-top: 10px;margin-right: 7px;"   > 
+              <ion-icon name="list-circle-outline" style="font-size:large;zoom:1;" (click)="login()"></ion-icon>        
+              </ion-col>
+                      
+                      
+      
+          </ion-row>
+
+        </ion-grid>
+      </div>
+
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content class="ion-padding">
+      <div style="height:75px"></div>
+          <ion-card style="border-radius:20px;margin-left:20px;margin-right:20px">
+               
+               <ion-item>
+                   <ion-input  name="refe"  placeholder="Enter Schedule Name"></ion-input>
+                  <ion-icon class="ion-align-self-center" name="document-lock" slot="start"></ion-icon>
+                 </ion-item>
+          <div style="height:25px"></div>
+                  <ion-item>
+                  <ion-datetime displayFormat="DD-MM-YYYY" min="1960-03-14" max="2021-12-12" placeholder="Schedule Date" ></ion-datetime>
+                    <ion-icon class="ion-align-self-center" name="albums-outline" slot="start"></ion-icon>             
+                 </ion-item>
+
+          <div style="height:25px"></div>
+              <ion-item>
+               <ion-input  name="refe"  placeholder="Schedule Description"></ion-input>
+                  <ion-icon class="ion-align-self-center" name="document-lock" slot="start"></ion-icon>
+           
+              </ion-item>
+             
+          </ion-card>
+           <div style="height:25px"></div>
+              <div style="margin-top: 50px;text-align:center">
+                <ion-button color="warning" shape="round" style="border-bottom-right-radius: 5px;border-top-right-radius: 5px;"
+                      (click)="gotolistcreation()"  >    
+                        Add New
+                      
+                    </ion-button>
+                    </div>
+</ion-content>

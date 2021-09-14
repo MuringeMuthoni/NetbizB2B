@@ -1,0 +1,62 @@
+<ion-header #header >
+  <ion-toolbar   >
+   
+      <div style="text-align: center;width: 98%;margin-top: 0.5px;margin-left: 0.5px;margin-right: 5px;padding-right: 5px;">
+        <ion-grid style="width: 100%;">
+          <ion-row  >  
+            <ion-col push-md="1"  align-self: start  style="align-items: left;" >                  
+              <div   style="text-align: left;width: 100%;"   >  
+                <img style="height: 30px;align-self: left;" src = "assets/netbiz logo 1.png" >
+                </div>            
+            </ion-col>
+
+             
+
+              <ion-col size="1"  style="text-align: left;margin-top: 10px;margin-right: 7px;"   > 
+              <ion-icon name="list-circle-outline" style="font-size:large;zoom:1;" (click)="login()"></ion-icon>        
+              </ion-col>
+                      
+                      
+      
+          </ion-row>
+
+        </ion-grid>
+      </div>
+
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div style="height: 15px"></div> 
+          <ion-card-subtitle style="margin-left: 5px;font-size: medium;">
+            {{CourseLable}}     
+          </ion-card-subtitle>  
+          <div style="height: 7px"></div>  
+
+          <ion-slides >  
+            <ion-slide class="trending" *ngFor="let names of trendingcourses" (click)="trendtap(names)" >
+            <ion-card class="trend-card">
+              <!-- <img src = {{names.avatarimage}} style="height: 70px;"  /> -->
+
+              <img src = {{names.avatarimage}} style="width: 100%;" > 
+
+              <div style="padding-left:5px">
+                <h2 style="font-size: smaller;color:rgb(175, 171, 171);text-align:left;"> {{ names.prodname }}</h2>
+                <div class="card-subtitle" style="font-size: smaller;color: rgb(175, 171, 171);text-align:left;"><b>{{ names.proddesc }}</b></div>
+                <br>
+                <div style="text-align: left;color: lime;">Payment Options: </div>
+                
+                <div class="card-subtitle" style="margin-top: 1px;font-size: smaller;color: rgb(175, 171, 171);text-align:left;">
+                  <b>{{ names.cost }}</b> <br>
+                  <b>{{ names.costt }}</b> <br>
+                  <b>{{ names.costf }}</b> <br>  
+                  <!-- <span style="font-size: smaller;color:yellow;text-align:left;"> {{ names.duration }}</span>                 -->
+                </div>
+ 
+              </div>
+            
+            </ion-card>
+            </ion-slide>
+          </ion-slides>
+
+</ion-content>

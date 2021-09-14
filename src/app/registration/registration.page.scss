@@ -1,0 +1,25 @@
+.letsplay{
+    padding-left:30px;
+    padding-right:30px;
+   
+  background-color:#0a0101;;
+    height:100%;
+    padding-top:10%;
+    border-radius:20px;
+}
+
+
+.imgholder{
+    img{
+        width: 80px;
+        height:  90px;      
+        position: center;
+    }
+    width: 100px;
+    z-index: 3;  
+    top:15px;
+    margin-left: 35%;
+    }
+    ion-content {
+        --background: url('/assets/back 2 (1).jpg') 0 0/100% 100% no-repeat
+      }

@@ -1,0 +1,54 @@
+<ion-header #header >
+  <ion-toolbar   >
+   
+      <div style="text-align: center;width: 98%;margin-top: 0.5px;margin-left: 0.5px;margin-right: 5px;padding-right: 5px;">
+        <ion-grid style="width: 100%;">
+          <ion-row  >  
+            <ion-col push-md="1"  align-self: start  style="align-items: left;" >                  
+              <div   style="text-align: left;width: 100%;"   >  
+                <img style="height: 30px;align-self: left;" src = "assets/netbiz logo 1.png" >
+                </div>            
+            </ion-col>
+
+             
+
+              <ion-col size="1"  style="text-align: left;margin-top: 10px;margin-right: 7px;"   > 
+               <ion-icon name="heart-circle-outline" (click)="goto_cart()"></ion-icon>             
+              </ion-col>
+                      
+                      
+      
+          </ion-row>
+
+        </ion-grid>
+      </div>
+
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div style="text-align: center;justify-content: center;margin-top: 30px;">
+     <img height="50%"  src = "assets/list.jpg"> 
+  </div>
+   
+  <div style="height:20px"> </div>
+   <div   style="text-align: center;width: 100%;"   > 
+              <h1 >
+              <b>  You have no list </b>
+                </h1>
+ </div>  
+    <div style="margin-top: 50px;text-align:center">
+  <ion-button color="warning" shape="round" style="border-bottom-right-radius: 5px;border-top-right-radius: 5px;"
+        (click)="gotolistcreation()"  >    
+          Add New
+        
+       </ion-button>
+       </div>
+        <div style="height:20px"> </div>
+   <div   style="text-align: center;width: 100%;"   > 
+              <h1 >
+              <b>  Creating list enables Scheduling </b>
+                </h1>
+ </div>  
+</ion-content>

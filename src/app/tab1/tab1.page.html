@@ -1,0 +1,148 @@
+
+
+
+<ion-header #header >
+  <ion-toolbar   >
+   
+      <div style="text-align: center;width: 98%;margin-top: 0.5px;margin-left: 0.5px;margin-right: 5px;padding-right: 5px;">
+        <ion-grid style="width: 100%;">
+          <ion-row  >  
+            <ion-col push-md="1"  align-self: start  style="align-items: left;" >                  
+              <div   style="text-align: left;width: 100%;"   >  
+                <img style="height: 30px;align-self: left;" src = "assets/netbiz logo 1.png" >
+                </div>            
+            </ion-col>
+
+                
+
+              <ion-col push-md="1" align-self: center  style="align-items: left;margin-top: 10px;" >                  
+                <div   style="text-align: right;width: 100%;"   > 
+                
+                      <ion-icon style="width:25px;height: 25px;margin-right: 1px;" name="heart-circle-outline"  (click)="SearchProduct()"></ion-icon>
+                  </div>            
+              </ion-col>            
+
+              <ion-col size="1"  style="text-align: left;margin-top: 10px;margin-right: 7px;"   > 
+               
+                <ion-icon size="large" name="cart-outline" (click)="goto_cart()">
+                </ion-icon>  
+              </ion-col>
+                      
+                      
+      
+          </ion-row>
+
+        </ion-grid>
+      </div>
+
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content [fullscreen]="true" class="content"  style="background-color: rgb(248, 244, 244)"
+[scrollEvents]="true" (ionScrollStart)="scrollStart(header)"   (ionScroll)="logScrolling($event)" >
+  
+    <div style="height:5px"></div>
+      <ion-searchbar #searchbar [(ngModel)]="usage.searchQuery" debounce="1800" (ionChange)="getItems($event)"  placeholder="What are you looking for?"
+       autocomplete="on" style="border-radius:20px" >
+      </ion-searchbar>
+      <div style="height:10px"></div>
+      <ion-card style="height: 190px;background-color: transparent;margin-top: 0.1px;border-radius:20px;margin-left:10px;margin-right:10px">  
+      
+                <ion-slides class="topslides" pager="true" #slideWithNav [options]="slideOptsOne"
+                  (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)"  >
+                          
+                    <ion-slide id="1" class="steps" >          
+                        <ion-img src="/assets/headers/welcomeimg1.jpg"   ></ion-img>                   
+                    </ion-slide>
+                          
+                    <ion-slide id="2"  class="steps"  >        
+                          <ion-img src="/assets/headers/shoppingcart.jpg"  ></ion-img> 
+                    </ion-slide>
+                                  
+                    <ion-slide id="3" class="steps"  >
+                            <ion-img src="/assets/headers/megadeals.jpg"    ></ion-img>
+                    </ion-slide>
+                                          
+                      <ion-slide id="4" class="steps"  >
+                        <ion-img src="/assets/headers/Shoppingupdate.png"  ></ion-img>                 
+                      </ion-slide>  
+
+                      <ion-slide id="5" class="steps" >
+                        <ion-img src="/assets/headers/Success.jpg"  ></ion-img>                  
+                      </ion-slide>                     
+                  </ion-slides> 
+  
+      </ion-card> 
+     <div style="height:5px"></div>
+     <div style="text-align:left;margin-left:10px;margin-right:10px">
+         <p> <b>Categories we offer On B2B</b></p>
+     </div>
+     <div style="height:2px"></div>
+        <ion-list  style="border-style:none;"    >  
+       
+                 <div class="wrapper">   
+                   <div class="box" *ngFor="let value of daBuilding" (click)="ServicesClicked($event, value)"  >                     
+                    <!-- <ion-virtual-scroll [items]="item.values"> 
+                      <ion-item *virtualItem="let item" approxItemHeight="120px"> -->
+                       
+                          <ion-card style="padding:0px;border-radius:10px" > 
+                            <div style="height:100%;width:100%;text-align: center;">
+                              <img style="max-height: 100px;"   src = {{value.avatarimage}}>  <br>
+                              <ion-label style="font-size: small;">
+                                {{ value.prodname }}
+                              </ion-label>  <br>  
+
+                              <ion-label style="font-size: small;">
+                                {{ value.currentksh }}
+                              </ion-label>                 
+                            </div> 
+                            <div id="spacer" style="height: 10px;"></div>
+                        </ion-card>  
+
+                                    
+                    </div>     
+                 </div>  
+             
+
+                      
+
+              
+      </ion-list>  
+ <div style="height: 5px;"></div>
+
+        <ion-card class="fixed"  style="border-radius:10px;padding-bottom: 7px;margin-top: 10px;" >  
+          <div style="margin-top: 10px;">
+            <ion-label  style="width: 100%;"  (click)="showAll()">
+              <span class="pro_images" style="float: left;margin-left: 10px;"> <b>Hot Deals </b>  </span>
+              <button style="float: right;margin-right: 10px;margin-top: 5px;background-color: transparent;color: rgb(84, 67, 236);">  more..</button>
+              </ion-label>
+          </div>
+          
+          <div style="margin-top: 1px;width: 100%;">  
+
+            <div *ngIf="!daBuilding" style="width: 100%;">
+              <div class="ion-padding custom-skeleton">
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                <ion-skeleton-text animated></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+              </div>              
+            </div>
+
+            <ion-slides [options]="slideOpts_stores" style="width: 100%;" >
+              <ion-slide *ngFor="let names of daBuilding" (click)="DealsClicked($event, names)">
+                <span>
+                  <ion-label  color="dark" style="font-size: smaller;">                             
+                    <img class="pro_images" src = {{names.avatarimage}}   >  <br>                        
+                    <span style="font-size: small;">  {{ names.currentksh }} </span> 
+                </ion-label>    
+              
+                </span>
+              </ion-slide>
+            </ion-slides> 
+          </div>
+      </ion-card>
+
+</ion-content> 
+

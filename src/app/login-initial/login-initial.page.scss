@@ -1,0 +1,15 @@
+ion-content {
+    --background: url('/assets/back 1 (4).jpg') 0 0/100% 100% no-repeat
+  }
+  
+.btns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    grid-gap: 0px 0px; 
+    padding: 0px;
+    width: 90%;
+    margin-left: 10px; 
+    align-self: center;justify-self: center;
+    margin-bottom: 25px;
+  }
