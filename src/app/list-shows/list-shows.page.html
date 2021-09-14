@@ -37,16 +37,15 @@
             <ion-slide class="trending" *ngFor="let names of daBuilding" (click)="trendtap(names)" >
             <ion-card class="trend-card">            
               <div style="padding-left:5px;margin-bottom:20px;margin-right:20px">
-                <h2 style="font-size: smaller;color:white;text-align:left;"> {{ names.prodname }}</h2>
+                <h1 style="color:white;text-align:center;"> {{ names.prodname }}</h1>
                 <div class="card-subtitle" style="font-size: smaller;color: white;text-align:left;"><b>{{ names.proddesc }}</b></div>
                 <br>
                 <div style="text-align: left;color: lime;">Payment Options: </div>
                 
                 <div class="card-subtitle" style="margin-top: 1px;font-size: smaller;color: rgb(175, 171, 171);text-align:left;">
-                  <b>{{ names.proddesc }}</b> <br>
-                  <b>{{ names.proddesc }}</b> <br>
-                  <b>{{ names.proddesc }}</b> <br>  
-                  <!-- <span style="font-size: smaller;color:yellow;text-align:left;"> {{ names.duration }}</span>                 -->
+                  <b> Price {{ names.currentksh }}</b> <br>
+                  <b>Schedule Date: {{ names.scheduledate }}</b> <br>
+                    
                 </div>
  
               </div>
@@ -55,7 +54,44 @@
             </ion-slide>
           </ion-slides>
       <div style="height:20px"></div>
-       <div style="text-align:left">
-       
-       </div>
+      <div style="padding-left: 5px;padding-right: 5px;">
+  <ion-grid   style="margin-top: 5px;"  > 
+                
+      <ion-row  style="background-color:snow"  *ngFor="let anything of daBuilding" > 
+          
+             <ion-col align-self: center style="justify-content: right;" size="auto" class="centered"    >
+               <img  style="font-size:x-large;align-self: center;justify-self: right;height:70px"   src = {{anything.avatarimage}}>  <br>
+                                                        
+                  </ion-col>
+
+                 
+                  <ion-col align-self: stretch push-md="1" >
+
+                    <div style="margin-top: 10px;">
+                      <span style="font-size:large;color:black"> Order Name{{anything.prodname}}</span> <br>                     
+                      <ion-card-subtitle style="font-size: medium;margin-top: 7px;margin-left: 7px;" >                        
+                              <b>Date: </b> {{anything.scheduledate}} <br> 
+                     </ion-card-subtitle>   
+                    </div>                     
+                   
+                  </ion-col>
+        
+                 
+                  <ion-col size="auto"  class="centered" style="align-items: right;color:lime"   >
+                    <div style="margin-top: 1px;text-align: right;">
+                    <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                                                                                                                                                            
+                    </div>  
+                  </ion-col>
+
+
+      </ion-row> 
+  </ion-grid>
+
+
+
+     
+          
+</div>
+
 </ion-content>
