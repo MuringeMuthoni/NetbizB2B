@@ -46,6 +46,18 @@ const routes: Routes = [
   {
     path: 'list-shows',
     loadChildren: () => import('./list-shows/list-shows.module').then( m => m.ListShowsPageModule)
+  },
+  {
+    path: 'view-cart',
+    loadChildren: () => import('./view-cart/view-cart.module').then( m => m.ViewCartPageModule)
+  },
+  {
+    path: 'tab-orders',
+    loadChildren: () => import('./tab-orders/tab-orders.module').then( m => m.TabOrdersPageModule)
+  },
+  {
+    path: 'payment',
+    loadChildren: () => import('./payment/payment.module').then( m => m.PaymentPageModule)
   }
 ];
 @NgModule({

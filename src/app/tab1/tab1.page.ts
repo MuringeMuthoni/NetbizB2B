@@ -146,12 +146,13 @@ export class Tab1Page {
     
   orderclicked(event, item) {
   
+    this.router.navigate(['/view-cart']);
   
-    this.wcf.Category_selected = item.image_name;       
-    this.wcf.Category_id = item.image_id;
+    // this.wcf.Category_selected = item.image_name;       
+    // this.wcf.Category_id = item.image_id;
   
-    console.log('category: ' + item.image_name + ' : ' + item.image_id)
-    this.router.navigate(['/request-description']);
+    // console.log('category: ' + item.image_name + ' : ' + item.image_id)
+    this.router.navigate(['/view-cart']);
   
   }
   
