@@ -1,47 +1,9 @@
 
 
-<ion-header #header >
-  <ion-toolbar   >
-   
-      <div style="text-align: center;width: 98%;margin-top: 0.5px;margin-left: 0.5px;margin-right: 5px;padding-right: 5px;">
-        <ion-grid style="width: 100%;">
-          <ion-row  >  
-            <ion-col push-md="1"  align-self: start  style="align-items: left;" >                  
-              <div   style="text-align: left;width: 100%;"   >  
-                <img style="height: 30px;align-self: left;" src = "assets/netbiz logo 1.png" >
-                </div>            
-            </ion-col>
-
-                
-
-              <ion-col push-md="1" align-self: center  style="align-items: left;margin-top: 10px;" >                  
-                <div   style="text-align: right;width: 100%;"   > 
-                
-                      <ion-icon style="width:25px;height: 25px;margin-right: 1px;" name="heart-circle-outline"  (click)="SearchProduct()"></ion-icon>
-                  </div>            
-              </ion-col>            
-
-              <ion-col size="1"  style="text-align: left;margin-top: 10px;margin-right: 7px;"   > 
-               
-                <ion-icon size="large" name="cart-outline" (click)="goto_cart()">
-                </ion-icon>  
-              </ion-col>
-                      
-                      
-      
-          </ion-row>
-
-        </ion-grid>
-      </div>
-
-  </ion-toolbar> 
-</ion-header>
-
-
 <ion-content  >
      
 
-  <ion-card  style="border-radius:20px"  >
+  <ion-card   >
     <ion-slides slidesPerView="1" centeredSlides  pager="true"  class="topslides" style="border-style: outset;"   >     
       
       <ion-slide *ngFor="let item of daBuilding;"  style="border-style: outset;"  >          
@@ -57,29 +19,37 @@
 
 
 
-    <ion-card  style="margin-bottom: 20px;border-radius:20px;height:80%"  >
+    <ion-card  style="margin-bottom: 20px;border-radius:20px;height:22%;width:100%"  >
 
-       <div  *ngFor="let item of daBuilding" style="margin-top: 20px;width: 98%;text-align: left;margin-bottom: 30px;margin-left: 10px;margin-right: 10px;padding-right: 5px;"> 
+       <div  *ngFor="let item of daBuilding" style="margin-top: 20px;width: 98%;text-align: left;margin-bottom: 30px;"> 
                      
             <div style="text-align: left;margin-bottom: 10px;">
-              <ion-card-subtitle style="font-size: larger;">{{ item.prodname }}  </ion-card-subtitle>    
+              <ion-card-subtitle style="font-size: medium;color:red;">{{ item.prodname }}  </ion-card-subtitle>    
             </div>
 
-            <div  style="text-align: left;">
-              <ion-card-subtitle style="font-size: larger;">{{ item.proddesc }}  </ion-card-subtitle>    
-            </div>
+      
                 
-            <ion-grid >                    
-              <ion-row  >
-                <ion-col  size="12"  >
-                     <ion-item text-wrap lines="none" >
-                    <label style="font-size: medium;" >
-                      {{ item.image_desc }}                                                  
-                    </label>
-                  </ion-item>
-                </ion-col> 
-              </ion-row>
-            </ion-grid>
+            
+        <ion-grid style="width: 100%;">
+        
+          <ion-row style="padding-left: 20px;" >          
+            <ion-col size="4" style="margin-top: 2px;" >                
+           <div style="text-align: left;margin-bottom: 10px;">
+              <ion-card-subtitle style="font-size: larger;">{{ item.pricerangeA }}  </ion-card-subtitle>    
+               <ion-card-subtitle style="font-size: larger;">{{ item.descrangeA }}  </ion-card-subtitle>   
+            </div>
+
+            </ion-col>
+            <ion-col size="4" style="margin-top: 2px;" >                
+             <div style="text-align: left;margin-bottom: 10px;">
+              <ion-card-subtitle style="font-size: larger;">{{ item.pricerangeB }}  </ion-card-subtitle> 
+                <ion-card-subtitle style="font-size: larger;">{{ item.descrangeB }}  </ion-card-subtitle>      
+            </div>
+            </ion-col>
+                
+          </ion-row>
+
+        </ion-grid>
 
             
                
@@ -91,25 +61,44 @@
 
 </ion-card>
 
-    <div style="text-align:center">
-      <h2> Things you may like</h2>
-    </div>
-   <ion-slides >  
-            <ion-slide class="trending" *ngFor="let item of dalist" (click)="trendtap(names)" >
-            <ion-card class="trend-card">            
-              <div style="padding-left:5px;margin-bottom:20px;margin-right:20px">
-                  <ion-img style="height: 100%;text-align:center" width="150%"  src={{item.avatarimage}} ></ion-img>     
-             
-                <div class="card-subtitle" style="margin-top: 1px;font-size: smaller;color:black;text-align:center;">
-                <p><b>  {{ item.prodname }}</b>  </p>
-                              
-                </div>
+    <ion-card  style="margin-bottom: 20px;border-radius:20px;height:30%;"  >
+          <p style="margin-left:10px"> Trade Assuarance</p>
+       <div  style="margin-top: 10px;width: 98%;text-align: left;margin-bottom: 30px;margin-left:10px"> 
+           <p>Protects your Netbiz.b2b orders</p>
+        </div>
+                <ion-item >                  
+                  <p>On-time Dispatch Guarantee</p>
+                  <ion-icon name="checkmark-circle-outline" class="ion-align-self-center"  slot="start"></ion-icon>
+                </ion-item>    
+                  <ion-item >                  
+                  <p>Refund Policy</p>
+                  <ion-icon name="checkmark-circle-outline" class="ion-align-self-center"  slot="start"></ion-icon>
+                </ion-item>    
+
+    </ion-card>
+     <ion-card  style="margin-bottom: 20px;border-radius:20px;height:30%;"  >
+        <ion-item >         
+          <p style="margin-left:10px" slot="start"> Variations</p>
+          <ion-icon name="ellipsis-horizontal-outline" class="ion-align-self-center"  slot="end" (click)="letsviewvariations()"></ion-icon>  
+          </ion-item>    
+         
+      <br>
+      <p style="margin-left:10px">Connectors:2, Color:6</p>
+         <div  *ngFor="let item of daBuilding">
+        <ion-slides slidesPerView="1" centeredSlides  pager="true"  class="topslides1" style="border-style: outset;"   >     
+      
+            <ion-slide  style="border-style: outset;"  >          
+                <ion-img style="height: 100%;" width="150%"  src={{item.avatarimage}} ></ion-img>       
+            </ion-slide> 
+    
+                          
+        </ion-slides>
+      </div>
+      <div style="text-align:center">
+       <ion-button color="warning" style="width:100%" shape="round"> Add to Cart </ion-button>
+      </div>
+    </ion-card>
  
-              </div>
-            
-            </ion-card>
-            </ion-slide>
-          </ion-slides>
 </ion-content>
 
 
@@ -124,17 +113,17 @@
           <ion-row style="padding-left: 10px;" >          
             <ion-col size="4" style="margin-top: 2px;" >                
              <div style="text-align:center">
-              <ion-button color="tertiary" style="width:100%" shape="round">Add to Cart</ion-button>
+              <ion-button color="tertiary" style="width:100%" shape="round">Chat Now</ion-button>
               </div>
             </ion-col>
             <ion-col size="4" style="margin-top: 2px;" >                
             <div style="text-align:center">
-              <ion-button color="success" style="width:100%" shape="round">Buy Now</ion-button>
+              <ion-button color="success" style="width:100%" shape="round">Send Enquiry</ion-button>
             </div>
             </ion-col>
             <ion-col size="4" style="margin-top: 2px;" >                
             <div style="text-align:center">
-              <ion-button color="warning" style="width:100%" shape="round">Lipa Mdogo </ion-button>
+              <ion-button color="warning" style="width:100%" shape="round">Start Order </ion-button>
               </div>
             </ion-col>        
           </ion-row>
