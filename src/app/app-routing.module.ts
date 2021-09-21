@@ -62,6 +62,10 @@ const routes: Routes = [
   {
     path: 'variation',
     loadChildren: () => import('./variation/variation.module').then( m => m.VariationPageModule)
+  },
+  {
+    path: 'create-order',
+    loadChildren: () => import('./create-order/create-order.module').then( m => m.CreateOrderPageModule)
   }
 ];
 @NgModule({

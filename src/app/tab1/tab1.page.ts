@@ -16,7 +16,7 @@ export class Tab1Page {
   daBuilding;
   pname = "";
   
-   
+  filterTerm: string;
   usage={     
     searchQuery:'',
     bname:'',
@@ -77,7 +77,9 @@ export class Tab1Page {
       { id: 5,avatarimage:'assets/MweaPishori.png', prodname: 'Mwea Pishori"',proddesc: 'Mwea Pishori',currentksh: 'Ksh 31000 '     },   
     ];
 
-
+      if (this.filterTerm === " "){
+        this.router.navigate(['/create-order']);
+      }
     }
 
    
@@ -298,6 +300,33 @@ Load_products(data) {
     }
       
 }
+
+ServicesClicked(event, names) {
+  
+  
+  var proname = names.p_name;
+  var proid = names.id;
+  var cat_url = names.image_url;     
+  var cat_url2 = names.image_url2;     
+  var cat_url3 = names.image_url3;    
+  var cat_desc = names.p_desc;     
+  var cat_pcost = names.unit_cost//.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  var cat_vat = names.vatable; 
+  var pole = names.polepole;   
+  var var_type = names.var_type;
+  var costsho = names.costsho;
+  var vids_url = names.vids_url
+ 
+    
+  
+  
+  this.router.navigate(['/view-cart']); 
+
+
+
+
+}
+
 
   }
   

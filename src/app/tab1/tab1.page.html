@@ -71,9 +71,8 @@
   
       </ion-card> 
         <div style="height:5px"></div>
-      <ion-searchbar #searchbar [(ngModel)]="usage.searchQuery" debounce="1800" (ionChange)="getItems($event)"  placeholder="What are you looking for?"
-       autocomplete="on" style="border-radius:20px" >
-      </ion-searchbar>
+      <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
+
      <div style="height:5px"></div>
      <div style="text-align:left;margin-left:10px;margin-right:10px">
          <p> <b>Categories we offer On B2B</b></p>
@@ -82,7 +81,7 @@
         <ion-list  style="border-style:none;"    >  
        
                  <div class="wrapper">   
-                   <div class="box" *ngFor="let value of daBuilding" (click)="ServicesClicked($event, value)"  >                     
+                   <div class="box" *ngFor="let value of daBuilding " (click)="ServicesClicked($event, value)"  >                     
                     <!-- <ion-virtual-scroll [items]="item.values"> 
                       <ion-item *virtualItem="let item" approxItemHeight="120px"> -->
                        
