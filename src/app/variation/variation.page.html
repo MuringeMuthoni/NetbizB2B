@@ -11,15 +11,15 @@
           <ion-row style="padding-left: 20px;" >          
             <ion-col size="4" style="margin-top: 2px;" >                
            <div style="text-align: left;margin-bottom: 10px;">
-              <ion-card-subtitle style="font-size: larger;">{{ item.pricerangeA }}  </ion-card-subtitle>    
-               <ion-card-subtitle style="font-size: larger;">{{ item.descrangeA }}  </ion-card-subtitle>   
+                <ion-img style="height: 20%;" width="20%"  src={{avatarimage1}} ></ion-img>    
             </div>
 
             </ion-col>
-            <ion-col size="4" style="margin-top: 2px;" >                
+            <ion-col size="4" style="margin-top: 12px;" >                
              <div style="text-align: left;margin-bottom: 10px;">
-              <ion-card-subtitle style="font-size: larger;">{{ item.pricerangeB }}  </ion-card-subtitle> 
-                <ion-card-subtitle style="font-size: larger;">{{ item.descrangeB }}  </ion-card-subtitle>      
+             <p>Ksh: {{ pricerange1 }} </p>
+              <p>MOQ: {{ MOQ1 }}  </p>
+              
             </div>
             </ion-col>
                 
@@ -28,6 +28,11 @@
         </ion-grid>
 
 
-
+<ion-item no-lines>
+   <ion-button (click)="minus()" shape="round">-</ion-button>
+   <p>{{qty}}</p>                   
+   <ion-button (click)="plus()" shape="round">+</ion-button>
+   
+</ion-item>
 
 </ion-content>

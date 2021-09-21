@@ -10,6 +10,7 @@ export class VariationPage implements OnInit {
   avatarimage1
   pricerange1
   MOQ1
+  qty
   constructor() {
     this.itemsorders = [
       { id: 0,avatarimage:'assets/headphones.jpg',pricerange:'200-1000',MOQ:'10 pieces'},
@@ -24,6 +25,7 @@ export class VariationPage implements OnInit {
     this.avatarimage1= "assets/headphones.jpg"
      this.pricerange1= "200-1000"
      this.MOQ1 ="10 pieces"
+      this.qty = "5"
   }
 
 }
