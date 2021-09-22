@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-search-product',
   templateUrl: './search-product.page.html',
@@ -9,7 +9,15 @@ export class SearchProductPage implements OnInit {
   products = [];
   items_ziko:boolean=false;
   no_items_found:boolean=false;
-  constructor() { }
+  
+   
+  usage={     
+    searchQuery:'',
+    bname:'',
+
+  }
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
     console.log("nimefika hapa kwa search1")
@@ -85,13 +93,13 @@ export class SearchProductPage implements OnInit {
 
     this.userRecords = [{
       "id": 1,
-      "name": "Leanne Graham",
+      "name": "tomato",
       "email": "Sincere@april.biz",
       "avatarimage":"assets/Tomato_je.jpg"
     },
     {
       "id": 2,
-      "name": "Ervin Howell",
+      "name": "onion",
       "email": "Shanna@melissa.tv",
       "avatarimage":"assets/Tomato_je.jpg"
     },
@@ -145,5 +153,7 @@ export class SearchProductPage implements OnInit {
     }
   ]
  }
-
+ createorder(){
+  this.router.navigate(['/create-order']);
+ }
 }
