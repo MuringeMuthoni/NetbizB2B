@@ -16,13 +16,14 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 
 import { Diagnostic } from '@ionic-native/diagnostic/ngx';
+import { Keyboard } from '@ionic-native/keyboard/ngx';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [SQLite,HTTP,Network,DatePipe,AndroidPermissions,Geolocation,
-    LocationAccuracy,Diagnostic,
+    LocationAccuracy,Diagnostic,Keyboard,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

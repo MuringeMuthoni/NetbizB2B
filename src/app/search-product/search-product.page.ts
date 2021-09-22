@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Keyboard } from '@ionic-native/keyboard/ngx';
 @Component({
   selector: 'app-search-product',
   templateUrl: './search-product.page.html',
@@ -17,7 +18,7 @@ export class SearchProductPage implements OnInit {
 
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private keyboard: Keyboard) { }
 
   ngOnInit() {
     console.log("nimefika hapa kwa search1")
@@ -30,16 +31,17 @@ export class SearchProductPage implements OnInit {
     this.pname = vals;
 
     if (vals != undefined){
-      if (vals.length>1){
+      if (vals === "Tomato"){
         this.no_items_found=false;
         this.items_ziko=true
       
         this.Load_products()
-           
+        this.keyboard.hide();
       }else{
         this.userRecords = []
         this.no_items_found=true;
         this.items_ziko=false
+        this.keyboard.hide();
       }
     }
 

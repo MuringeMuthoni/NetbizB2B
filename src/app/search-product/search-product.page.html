@@ -35,31 +35,16 @@
           
       <div  class="ion-padding" *ngIf="no_items_found" style="width: 100%;height: 100%;">
         <ion-item lines="none"  text-wrap style="font-size:x-large;font-weight:  bolder;margin-top: 20px;">
-          Sorry we currently do not have this in our inventory.Do not worry 
+          Sorry we currently do not have this in our inventory.Click to order item 
         </ion-item>
 
         <div style="text-align: center;justify-content: center;margin-top: 30px;">
-           <img height="50%"  src = "assets/assuarance.jpg"> 
-        </div>
-         
-        
-        <ion-item text-wrap style="font-size:x-large;font-weight:  bolder;margin-top: 80px;">
-         Please create Order for this item we will bring it
-        </ion-item>
-
-        <ion-item text-wrap lines="none">
-          <label style="font-size: medium;" >
-            <p>We couldn't find what you are looking for<br>
-              would you like to order?
-           </p>                                     
-          </label>
-        </ion-item>
-
-        <ion-item  lines="none">
-          <ion-button color="tertiary" size="medium" shape="round" (click)="createorder()">                   
+              <ion-button color="tertiary" size="medium" shape="round" (click)="createorder()">                   
               ORDER ITEM
           </ion-button>
-        </ion-item>
+        </div>
+         
+      
 
        
       </div>
