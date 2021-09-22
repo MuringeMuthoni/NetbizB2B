@@ -7,6 +7,7 @@ import { CategoriesService } from '../categories.service';
 import { DefaultService } from '../default.service';
 import { ModalController } from '@ionic/angular';
 import { PopMessagePage } from '../pop-message/pop-message.page';
+import { PopAlertPage } from '../pop-alert/pop-alert.page';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -77,9 +78,9 @@ export class Tab1Page {
       { id: 5,avatarimage:'assets/MweaPishori.png', prodname: 'Mwea Pishori"',proddesc: 'Mwea Pishori',currentksh: 'Ksh 31000 '     },   
     ];
 
-      if (this.filterTerm === " "){
-        this.router.navigate(['/create-order']);
-      }
+     
+  //      this.openalert()    
+   
     }
 
    
@@ -301,31 +302,30 @@ Load_products(data) {
       
 }
 
-ServicesClicked(event, names) {
-  
-  
-  var proname = names.p_name;
-  var proid = names.id;
-  var cat_url = names.image_url;     
-  var cat_url2 = names.image_url2;     
-  var cat_url3 = names.image_url3;    
-  var cat_desc = names.p_desc;     
-  var cat_pcost = names.unit_cost//.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  var cat_vat = names.vatable; 
-  var pole = names.polepole;   
-  var var_type = names.var_type;
-  var costsho = names.costsho;
-  var vids_url = names.vids_url
- 
-    
-  
-  
-  this.router.navigate(['/view-cart']); 
-
-
-
-
+cantfind() {
+  this.router.navigate(['/create-order']); 
 }
+
+async openalert() {
+
+
+  const modal = await this.modalController.create({
+    component: PopAlertPage ,
+    swipeToClose: true,
+    componentProps: {
+      "paramID": 0,   //this for reaching the right function
+     // "paramTitle": idata,
+     },
+    cssClass: 'my-custom-modal-confirmation',      
+  });
+  modal.onDidDismiss().then((dataReturned) => {
+   
+   
+  });
+ 
+  return await modal.present();
+ }
+
 
 
   }

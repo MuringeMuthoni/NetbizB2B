@@ -71,7 +71,13 @@
   
       </ion-card> 
         <div style="height:5px"></div>
-      <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
+        
+      <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm" animated="true" (click)="cantfind()" ></ion-searchbar>
+
+
+
+      
+   
 
      <div style="height:5px"></div>
      <div style="text-align:left;margin-left:10px;margin-right:10px">
@@ -81,7 +87,7 @@
         <ion-list  style="border-style:none;"    >  
        
                  <div class="wrapper">   
-                   <div class="box" *ngFor="let value of daBuilding " (click)="ServicesClicked($event, value)"  >                     
+                   <div class="box" *ngFor="let value of daBuilding  " (click)="ServicesClicked($event, value)"  >                     
                     <!-- <ion-virtual-scroll [items]="item.values"> 
                       <ion-item *virtualItem="let item" approxItemHeight="120px"> -->
                        
