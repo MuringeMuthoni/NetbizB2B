@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Keyboard } from '@ionic-native/keyboard/ngx';
+import { WcfService } from '../wcf.service';
 @Component({
   selector: 'app-search-product',
   templateUrl: './search-product.page.html',
@@ -18,13 +19,14 @@ export class SearchProductPage implements OnInit {
 
   }
 
-  constructor(private router: Router,private keyboard: Keyboard) { }
+  constructor(private router: Router,private keyboard: Keyboard,private wcf:WcfService) { }
 
   ngOnInit() {
     console.log("nimefika hapa kwa search1")
   }
   pname
   items=""
+  content
   getItems(ev: any) {
     const vals = ev.target.value;
     console.log('val|' + vals)
@@ -38,6 +40,7 @@ export class SearchProductPage implements OnInit {
         this.Load_products()
         this.keyboard.hide();
       }else{
+        this.content= this.usage['searchQuery'];
         this.userRecords = []
         this.no_items_found=true;
         this.items_ziko=false
@@ -156,6 +159,8 @@ export class SearchProductPage implements OnInit {
   ]
  }
  createorder(){
+ this.wcf.content= this.usage['searchQuery'];
+ console.log("this.wcf.content" + this.wcf.content)
   this.router.navigate(['/create-order']);
  }
 }

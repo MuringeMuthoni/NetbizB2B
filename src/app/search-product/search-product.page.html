@@ -35,9 +35,16 @@
           
       <div  class="ion-padding" *ngIf="no_items_found" style="width: 100%;height: 100%;">
         <ion-item lines="none"  text-wrap style="font-size:x-large;font-weight:  bolder;margin-top: 20px;">
-          Sorry we currently do not have this in our inventory.Click to order item 
+        <div style="text-align:center">
+        <h1>   Sorry,  we  do not have {{content}} in our inventory</h1>
+        </div>
+       
+        
+         
         </ion-item>
-
+           <div style="height:10px"></div>
+            <h5 style="margin-left:20px">Would you like to order this item</h5> 
+              <div style="height:20px"></div>
         <div style="text-align: center;justify-content: center;margin-top: 30px;">
               <ion-button color="tertiary" size="medium" shape="round" (click)="createorder()">                   
               ORDER ITEM

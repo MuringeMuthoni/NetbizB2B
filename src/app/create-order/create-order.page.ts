@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WcfService } from '../wcf.service';
 
 @Component({
   selector: 'app-create-order',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-order.page.scss'],
 })
 export class CreateOrderPage implements OnInit {
-
-  constructor() { }
-
+ prodname
+  constructor(private wcf:WcfService) {
+     this.prodname = this.wcf.content;
+    console.log("this.prodname" + this.prodname)
+   }
+ 
   ngOnInit() {
+    
   }
 
 }

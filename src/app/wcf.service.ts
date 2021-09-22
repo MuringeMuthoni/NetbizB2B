@@ -29,6 +29,7 @@ export class WcfService {
   public user_Geo_loc;
   public user_Geo_enabled;
   public backurl="";
+  public content
   constructor(private network: Network,private http: HTTP,private sqlite: SQLite,private router:Router) { }
 
 
