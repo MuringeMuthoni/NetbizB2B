@@ -1,0 +1,133 @@
+<ion-header >
+  <ion-toolbar class="new-background-color"   >
+   
+      <div style="text-align: center;width: 98%;margin-top: 0.5px;margin-left: 0.5px;margin-right: 5px;padding-right: 5px;">
+        <ion-grid style="width: 100%;">
+          <ion-row  >              
+            <ion-col push-md="1" style="text-align: left;margin-top: 10px;" >                
+              <ion-icon name="arrow-back-circle-outline" (click)="go_home()"></ion-icon>
+          </ion-col>
+
+            
+              <ion-col size="1"  style="text-align: left;margin-top: 5px;"   >                
+                <ion-icon style="color: white;" size="large" name="cart-outline" (click)="goto_cart()">
+                </ion-icon>  
+              </ion-col>
+        
+          </ion-row>
+
+        </ion-grid>
+      </div>
+
+  </ion-toolbar> 
+</ion-header>
+
+
+
+    <ion-content>
+
+      <ion-searchbar #searchbar [(ngModel)]="usage.searchQuery" debounce="1800" (ionChange)="getItems($event)"  placeholder="What are you looking for?"
+       autocomplete="on"  >
+      </ion-searchbar>
+
+      <span style="margin-left: 15px;font-size: x-small;"> {{items}} </span> <br>      
+     
+          
+      <div  class="ion-padding" *ngIf="no_items_found" style="width: 100%;height: 100%;">
+        <ion-item lines="none"  text-wrap style="font-size:x-large;font-weight:  bolder;margin-top: 20px;">
+          Sorry we currently do not have this in our inventory.Do not worry 
+        </ion-item>
+
+        <div style="text-align: center;justify-content: center;margin-top: 30px;">
+           <img height="50%"  src = "assets/assuarance.jpg"> 
+        </div>
+         
+        
+        <ion-item text-wrap style="font-size:x-large;font-weight:  bolder;margin-top: 80px;">
+         Please create Order for this item we will bring it
+        </ion-item>
+
+        <ion-item text-wrap lines="none">
+          <label style="font-size: medium;" >
+            <p>We couldn't find what you are looking for<br>
+              would you like to order?
+           </p>                                     
+          </label>
+        </ion-item>
+
+        <ion-item  lines="none">
+          <ion-button color="tertiary" size="medium" shape="round" (click)="proceed()">                   
+              ORDER ITEM
+          </ion-button>
+        </ion-item>
+
+       
+      </div>
+
+      
+
+      <div *ngIf="items_ziko">
+        <div style="padding-left: 5px;padding-right: 5px;">
+
+   
+         
+               
+               <div>
+      
+                  <ion-grid *ngFor="let item of userRecords" (click)="pro_clicked($event, item)" style="margin-top: 20px;"  > 
+                  
+                          <ion-row   style="padding-left: 10px;padding-right: 10px ;border-bottom-style: solid;border-bottom-width: 1px;border-color: rgb(207, 211, 211);" >   
+      
+                            <ion-col align-self: stretch size="4" >
+                                <img [src]="item.avatarimage"  style="width: 150px;align-self: center;justify-self: left"  />                           
+                            </ion-col>
+                        
+                            <ion-col align-self: center size="8"  style="align-items: left;" >
+                              <div style="margin-top: 10px;text-align: left;">
+                                <b> {{item.name}} </b> <br>                        
+                                <ion-item text-wrap lines="none">  
+                                  <span style="font-size: small;" >{{item.email}}  </span>
+                                </ion-item>
+                             
+                             </div>
+                            </ion-col>
+                          </ion-row> 
+                      </ion-grid>
+                     
+                
+                  </div> 
+          </div>
+
+
+          
+          <!-- <ion-grid>  
+            <ion-row  class="rowclass"  >  
+              <div class="wrapper" >               
+                <ion-col class="box" *ngFor="let names of products" (click)="pro_clicked($event, names)"   > 
+                                                      <ion-card class="fixed"  >    
+             <div style="height:70%;width:100%;">
+                <img style="min-height: 100%;min-width: 100%;flex-shrink:0" src = {{names.image_url}} alt="assets/icon.png"   > <br>   
+          </div>
+          <div style="height:30%;padding-left:2px">
+                <ion-label style="text-align:center">{{ names.p_name }}</ion-label>
+                                     <br>       
+                                      <br>  
+              <ion-label style="font-size: larger;" > <i><b> Ksh. {{ names.p_cost }} </b> </i> </ion-label>
+                <br>
+           </div>
+          </ion-card>
+                           
+                           
+                </ion-col>
+              </div>
+            </ion-row>
+        </ion-grid>    -->
+      </div>
+      
+
+      
+      
+    
+      
+
+    </ion-content>

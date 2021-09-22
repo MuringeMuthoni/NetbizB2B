@@ -8,6 +8,7 @@ import { DefaultService } from '../default.service';
 import { ModalController } from '@ionic/angular';
 import { PopMessagePage } from '../pop-message/pop-message.page';
 import { PopAlertPage } from '../pop-alert/pop-alert.page';
+import { MydbService } from '../mydb.service';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -16,7 +17,8 @@ import { PopAlertPage } from '../pop-alert/pop-alert.page';
 export class Tab1Page {
   daBuilding;
   pname = "";
-  
+  public searchTerm: string = "";
+  public itemss: any;
   filterTerm: string;
   usage={     
     searchQuery:'',
@@ -66,7 +68,7 @@ export class Tab1Page {
   no_items_found:boolean=false;
   constructor(private router: Router,private Loc: Location,
     private defalt:DefaultService,private Cat_service: CategoriesService,
-    private wcf:WcfService,private modalController:ModalController
+    private wcf:WcfService,private modalController:ModalController,private mydb:MydbService
     ) { 
 
  this.daBuilding = [
@@ -86,7 +88,13 @@ export class Tab1Page {
    
     
     ngOnInit() {
-      this.Load_default();
+      //this.Load_default();
+     // this.setFilteredItems();
+    }
+    itemsselected
+    setFilteredItems() 
+    {  
+      this.itemss = this.mydb.filterItems(this.searchTerm); 
     }
   
     subscription2;
@@ -302,6 +310,10 @@ Load_products(data) {
       
 }
 
+SearchProduct(){
+  console.log("nimefika hapa kwa search")
+  this.router.navigate(['/search-product']);
+ }
 cantfind() {
   this.router.navigate(['/create-order']); 
 }
@@ -325,7 +337,6 @@ async openalert() {
  
   return await modal.present();
  }
-
 
 
   }
