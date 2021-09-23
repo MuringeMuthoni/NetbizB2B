@@ -31,21 +31,21 @@
           <ion-card style="border-radius:20px;margin-left:20px;margin-right:20px">
                
                <ion-item>
-                   <ion-input  name="refe"  readonly > {{prodname}}</ion-input>
+                   <ion-input  name="refe"  readonly [(ngModel)]="usage.prodname" > {{prodname}}</ion-input>
                   <ion-icon class="ion-align-self-center" name="document-lock" slot="start"></ion-icon>
                  </ion-item>
           
 
           <div style="height:25px"></div>
               <ion-item>
-               <ion-input  name="refe"  placeholder="Quantity" type="number"></ion-input>
+               <ion-input  name="refe"  placeholder="Quantity" type="number" [(ngModel)]="usage.prodqty"></ion-input>
                   <ion-icon class="ion-align-self-center" name="document-lock" slot="start"></ion-icon>
            
               </ion-item>
              
           <div style="height:25px"></div>
               <ion-item>
-               <ion-input  name="refe"  placeholder="Description" ></ion-input>
+               <ion-input  name="refe"  placeholder="Description" [(ngModel)]="usage.proddesc" ></ion-input>
                   <ion-icon class="ion-align-self-center" name="document-lock" slot="start"></ion-icon>
            
               </ion-item>
@@ -54,7 +54,7 @@
            <div style="height:25px"></div>
               <div style="margin-top: 50px;text-align:center">
                 <ion-button color="warning" shape="round" style="border-bottom-right-radius: 5px;border-top-right-radius: 5px;"
-                      (click)="gotolistcreation()"  >    
+                      (click)="create_order()"  >    
                         Create Order
                       
                     </ion-button>

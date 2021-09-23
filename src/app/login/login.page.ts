@@ -125,7 +125,7 @@ export class LoginPage implements OnInit {
      // this.Wcf.Acctype = this.usertype;
 
 
-     var data = username + ";" + pass + ";" + "none" +  ";7979"
+     var data = "1;" + username + ";" + pass + ";" + "none" +  ";7979"
      console.log ('contents is ' + this.Contents);  
      this.ThisMessage[0] = "Please wait as we authenticate...";
   
@@ -149,7 +149,7 @@ export class LoginPage implements OnInit {
       component: PopMessagePage ,
       swipeToClose: true,
       componentProps: {
-        "paramID": 8,   //this for reaching the right function
+        "paramID": 0,   //this for reaching the right function
         "paramTitle": this.Wcf.Contents,
         },
       cssClass: 'posting-popup',     
@@ -183,7 +183,7 @@ export class LoginPage implements OnInit {
           }else if  (zote.indexOf("error") >=0) {
             //this.ThisMessage[0] = "Error encoutered";
             alert(this.Wcf.Error_message)
-            this.router.navigate(['/tabs/account']);
+            this.router.navigate(['/intro']);
         
         }else {
             this.ThisMessage[0] = " Working. Please wait.....";

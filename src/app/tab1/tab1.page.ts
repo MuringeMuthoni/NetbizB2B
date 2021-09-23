@@ -163,7 +163,7 @@ export class Tab1Page {
     // this.wcf.Category_id = item.image_id;
   
     // console.log('category: ' + item.image_name + ' : ' + item.image_id)
-    this.router.navigate(['/view-cart']);
+    this.router.navigate(['/tab-orders']);
   
   }
   

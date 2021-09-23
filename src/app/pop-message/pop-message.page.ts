@@ -66,7 +66,7 @@ export class PopMessagePage implements OnInit {
    
       if (this.modelId == 0){  
            var conts = this.Contents
-           var MainURL = "https://api-fixpal.netbizholdings.com/Jujus.svc/Create_account?Contents=" + conts         
+           var MainURL = "https://dev-service.netbizholdings.com/Jujus.svc/Log_In?Contents=" + conts         
            this.Wcf.Server_connector_stream(MainURL)
            .then((data: string)=>{
              this.proceed(data);
@@ -74,7 +74,7 @@ export class PopMessagePage implements OnInit {
 
           } else if (this.modelId ==1){
             var conts = this.Contents
-            var MainURL = "https://api-fixpal.netbizholdings.com/Jujus.svc/get_media_vids_moja?Contents=" + conts  
+            var MainURL = "https://dev-service.netbizholdings.com/Jujus.svc/insert_order?Contents=" + conts  
             this.Wcf.Server_connector_stream(MainURL)
             .then((data: string)=>{
               this.proceed(data);
