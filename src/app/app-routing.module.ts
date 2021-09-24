@@ -70,6 +70,18 @@ const routes: Routes = [
   {
     path: 'search-product',
     loadChildren: () => import('./search-product/search-product.module').then( m => m.SearchProductPageModule)
+  },
+  {
+    path: 'go-to-cart',
+    loadChildren: () => import('./go-to-cart/go-to-cart.module').then( m => m.GoToCartPageModule)
+  },
+  {
+    path: 'checkout',
+    loadChildren: () => import('./checkout/checkout.module').then( m => m.CheckoutPageModule)
+  },
+  {
+    path: 'quotation',
+    loadChildren: () => import('./quotation/quotation.module').then( m => m.QuotationPageModule)
   }
 ];
 @NgModule({

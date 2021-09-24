@@ -157,7 +157,7 @@ export class Tab1Page {
     
   orderclicked(event, item) {
   
-    this.router.navigate(['/view-cart']);
+    //this.router.navigate(['/go-to-cart']); 
   
     // this.wcf.Category_selected = item.image_name;       
     // this.wcf.Category_id = item.image_id;
@@ -338,7 +338,9 @@ async openalert() {
   return await modal.present();
  }
 
-
+ gotocart() {
+  this.router.navigate(['/go-to-cart']); 
+}
   }
   
 

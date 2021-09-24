@@ -4,22 +4,18 @@
           <ion-row  >  
             <ion-col push-md="1"  align-self: start  style="align-items: left;" >                  
               <div   style="text-align: left;width: 100%;"   >  
-                       <ion-icon style="width:25px;height: 25px;margin-right: 1px;" name="heart-circle-outline"  (click)="SearchProduct()"></ion-icon>
+                       <ion-icon style="width:25px;height: 25px;margin-right: 1px;" name="heart-circle-outline" (click)="SearchProduct()"></ion-icon>
                 </div>            
             </ion-col>
 
                              
              <ion-col push-md="1" align-self: center  style="align-items: left;margin-top: 10px;" >                  
                 <div   style="text-align: right;width: 100%;"   > 
-                
-                      <ion-icon style="width:25px;height: 25px;margin-right: 1px;" name="heart-circle-outline"  (click)="SearchProduct()"></ion-icon>
+              
+                      <ion-icon style="width:25px;height: 25px;margin-right: 1px;" name="bag-handle-outline" (click)="SearchProduct()"></ion-icon>
                   </div>            
               </ion-col>           
-              <ion-col size="1"  style="text-align: left;margin-top: 10px;margin-right: 7px;"   > 
-               
-              <ion-icon name="bag-handle-outline"></ion-icon>
-               
-              </ion-col>
+            
                       
                       
       
@@ -41,45 +37,86 @@
      </ion-slides>
    </ion-card>
 
-
-
-
-</ion-content>
-
-
-
-<ion-footer>
-  <ion-toolbar  > 
-
-      
-
+      <ion-card  class="rcorners"  *ngFor="let item of daBuilding" >
+                 
+            
         <ion-grid style="width: 100%;">
         
-          <ion-row style="padding-left: 10px;" >          
+          <ion-row style="padding-left: 20px;" >          
             <ion-col size="4" style="margin-top: 2px;" >                
-             <div style="text-align:center">
-              <ion-button color="tertiary" style="width:100%" shape="round">Chat Now</ion-button>
-              </div>
+           <div style="text-align: left;margin-bottom: 10px;">
+              <h1><b>{{ item.prodname }}</b></h1>
+              
+              <p>By {{ item.Bysupplier }} </p>
+               
+            </div>
+
             </ion-col>
             <ion-col size="4" style="margin-top: 2px;" >                
-            <div style="text-align:center">
-              <ion-button color="success" style="width:100%" shape="round">Send Quote</ion-button>
+             <div style="text-align: left;margin-bottom: 10px;">
+             <p>Cost {{ item.pricerangeA }} </p>                
             </div>
             </ion-col>
-            <ion-col size="4" style="margin-top: 2px;" >                
-            <div style="text-align:center">
-              <ion-button color="warning" style="width:100%" shape="round">Start Order </ion-button>
-              </div>
-            </ion-col>        
+                
           </ion-row>
 
         </ion-grid>
 
-         
+      <ion-item no-lines>
+        <ion-button (click)="minus()" shape="round"  fill="clear" style="font-size:30px">-</ion-button>
+        <ion-button shape="round" color="danger" style="height: 65px;width:80%" (click)="letsviewbag()">Add To Bag
+                <ion-icon name="bag-handle-outline"  slot="end"></ion-icon>                 
+               </ion-button>              
+        <ion-button (click)="plus()" shape="round"  fill="clear" style="font-size:30px">+</ion-button>
+        
+      </ion-item>
 
-    
-     
+<ion-segment 
+    value="all" 
+    color="tertiary" 
+    scrollable="true"
+    mode="ios"
+    [(ngModel)]="segmentModel" 
+    (ionChange)="segmentChanged($event)">
+
+      <ion-segment-button value="Details">
+        <ion-label>Details</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="Review">
+        <ion-label>Review</ion-label>
+      </ion-segment-button>
+
    
- 
-  </ion-toolbar>
-</ion-footer>
+    </ion-segment>
+    <ion-card *ngIf="segmentModel === 'Details'" style="padding-left:10px;padding-right:10px">
+     <p>Cabbage, especially red cabbage, seems to raise levels of beta-carotene, lutein, and other heart-protective antioxidants.
+      It also helps lower something called “oxidized” LDL,
+      which is linked to hardening of the arteries.
+       And since it eases inflammation, it can help prevent heart disease<p>
+    </ion-card>
+
+    <ion-card *ngIf="segmentModel === 'Review'">
+
+        <div  class="ion-padding" style="width: 100%;height: 30%;">       
+           <div style="height:2px"></div>
+            <p style="margin-left:20px">Not reviewed, Would you set reminder to review after you purchase</p> 
+              <div style="height:20px"></div>
+        <div style="text-align: center;justify-content: center;margin-top: 30px;">
+              <ion-button color="tertiary" size="medium" shape="round" (click)="createorder()">                   
+              Set reminder
+          </ion-button>
+        </div>
+         
+      
+
+       
+      </div>
+
+
+    </ion-card>
+
+
+
+      </ion-card>
+</ion-content>

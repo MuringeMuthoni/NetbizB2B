@@ -2,18 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-tab-orders',
-  templateUrl: './tab-orders.page.html',
-  styleUrls: ['./tab-orders.page.scss'],
+  selector: 'app-go-to-cart',
+  templateUrl: './go-to-cart.page.html',
+  styleUrls: ['./go-to-cart.page.scss'],
 })
-export class TabOrdersPage implements OnInit {
+export class GoToCartPage implements OnInit {
   daBuilding;
   thelist;
   segmentModel = "Details";
+  
+  usage={
+    promoname:'',
+   
+  }
+
   constructor(private router: Router) {
     
     this.daBuilding = [
-      { id: 0,avatarimage:'assets/cabbage.jpg', prodname: 'White Cabbage ',pricerangeA: 'KSH 2000',Bysupplier: 'Bella hut', },  
+      { id: 0,avatarimage:'assets/cabbage.jpg', prodname: 'White Cabbage ',pricerangeA: 'KSH 2000',Bysupplier: 'Bella hut',proquantity:"2" },  
+       
+   
     ];
     
    }
@@ -33,8 +41,8 @@ export class TabOrdersPage implements OnInit {
    
   }
   
-   letsviewbag(){
-    this.router.navigate(['/go-to-cart']);
+   letsviewcheckout(){
+    this.router.navigate(['/checkout']);
    }
    letsviewlist(){
     this.thelist = [

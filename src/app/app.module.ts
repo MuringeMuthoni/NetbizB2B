@@ -17,13 +17,14 @@ import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 
 import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 import { Keyboard } from '@ionic-native/keyboard/ngx';
+import { DatePicker } from '@ionic-native/date-picker/ngx';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [SQLite,HTTP,Network,DatePipe,AndroidPermissions,Geolocation,
-    LocationAccuracy,Diagnostic,Keyboard,
+    LocationAccuracy,Diagnostic,Keyboard,DatePicker,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
