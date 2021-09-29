@@ -82,7 +82,15 @@ const routes: Routes = [
   {
     path: 'quotation',
     loadChildren: () => import('./quotation/quotation.module').then( m => m.QuotationPageModule)
+  },  {
+    path: 'quote',
+    loadChildren: () => import('./quote/quote.module').then( m => m.QuotePageModule)
+  },
+  {
+    path: 'list-of-orders',
+    loadChildren: () => import('./list-of-orders/list-of-orders.module').then( m => m.ListOfOrdersPageModule)
   }
+
 ];
 @NgModule({
   imports: [

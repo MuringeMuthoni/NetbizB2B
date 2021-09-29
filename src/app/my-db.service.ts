@@ -43,7 +43,8 @@ export class MyDbService {
                         //console.log('Db console' + db )
                         db.executeSql('create table  IF NOT EXISTS feedback_backend(rowid INTEGER PRIMARY KEY, siku VARCHAR(50), message VARCHAR(200))', [])
                         db.executeSql('create table  IF NOT EXISTS userss(rowid INTEGER PRIMARY KEY,coluserid VARCHAR(50),colusername VARCHAR(50),colcourse  VARCHAR(50))', [])
-                        db.executeSql('create table  IF NOT EXISTS reginfo(rowid INTEGER PRIMARY KEY, regid VARCHAR(50))', [])
+                        db.executeSql('create table  IF NOT EXISTS reginfo(rowid INTEGER PRIMARY KEY, regid VARCHAR(50))', []),
+                        db.executeSql('create table  IF NOT EXISTS tblorders(rowid INTEGER PRIMARY KEY, prodname VARCHAR(50),prodqty VARCHAR(50),proddesc VARCHAR(50))', [])
                         .catch(e => console.log( "e" +  e));
                        // console.log('nimecreate zote');
                         resolve(this.Wcf.dbname)

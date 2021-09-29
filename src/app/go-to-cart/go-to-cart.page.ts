@@ -52,4 +52,8 @@ export class GoToCartPage implements OnInit {
    
     ];
    }
+   letsviewquotation(){
+    this.router.navigate(['/quotation']);
+   }
+
 }

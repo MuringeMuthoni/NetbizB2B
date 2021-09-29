@@ -45,7 +45,7 @@
              
           <div style="height:25px"></div>
               <ion-item>
-               <ion-input  name="refe"  placeholder="Description" [(ngModel)]="usage.proddes" ></ion-input>
+               <ion-input  name="refe"  placeholder="Description" [(ngModel)]="usage.proddesc" ></ion-input>
                   <ion-icon class="ion-align-self-center" name="document-lock" slot="start"></ion-icon>
            
               </ion-item>
@@ -54,10 +54,62 @@
            <div style="height:25px"></div>
               <div style="margin-top: 50px;text-align:center">
                 <ion-button color="warning" shape="round" style="border-bottom-right-radius: 5px;border-top-right-radius: 5px;"
-                      (click)="gotolistcreation()"  >    
+                      (click)="enter_expense()"  >    
                         Create Order
                       
                     </ion-button>
                     </div>
                
+              <b style="padding-left: 5px;text-align:center;margin-top: 10px;">Expenses list </b>
+              <ion-card  style="text-align: left;border-style:outset;background-color:snow" >           
+                  
+                      <ion-grid *ngFor="let item of items"   style="margin-top: 20px;"  > 
+                    
+                        <ion-row   style="padding-left: 10px;padding-right: 10px ;border-bottom-style: solid;border-bottom-width: 1px;border-color: rgb(207, 211, 211);" >   
+        
+                          <ion-col align-self: center size="3"  style="align-items: left;color:purple" >
+                            <div style="margin-top: 1px;text-align: left;">
+                              <b> {{item.name}}   </b> <br>                                                                                                                                            
+                            </div>    
+                          </ion-col>
+
+                          <ion-col align-self: stretch size="3" style="align-items: left;color:purple" >
+                              <b>  {{item.amount}}  </b> <br>                            
+                          </ion-col>
+
+                          <ion-col align-self: stretch size="6" style="align-items: left;color:purple" >
+                            <b>  {{item.desc}}  </b> <br>                            
+                        </ion-col>
+                      
+                         
+                        </ion-row >
+                       </ion-grid>
+
+
+              </ion-card>
 </ion-content>
+<ion-footer>
+  <ion-toolbar  > 
+
+      
+
+        <ion-grid style="width: 100%;">
+        
+          <ion-row style="padding-left: 10px;" >          
+            <ion-col size="10" style="margin-top: 2px;" >                
+             <div style="text-align:center">
+              <ion-button color="tertiary"  shape="round"  (click)="letsviewquotation()">View List</ion-button>
+              </div>
+            </ion-col>           
+          </ion-row>
+
+        </ion-grid>
+
+         
+
+    
+     
+   
+ 
+  </ion-toolbar>
+</ion-footer>
