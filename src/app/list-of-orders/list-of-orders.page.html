@@ -1,75 +1,133 @@
-<ion-header #header >
-  <ion-toolbar   >
-   
-      <div style="text-align: center;width: 98%;margin-top: 0.5px;margin-left: 0.5px;margin-right: 5px;padding-right: 5px;">
-        <ion-grid style="width: 100%;">
-          <ion-row  >  
-            <ion-col push-md="1"  align-self: start  style="align-items: left;" >                  
-              <div   style="text-align: left;width: 100%;"   >  
-                <img style="height: 30px;align-self: left;" src = "assets/netbiz logo 1.png" >
-                </div>            
-            </ion-col>
 
-             
-
-              <ion-col size="1"  style="text-align: left;margin-top: 10px;margin-right: 7px;"   > 
-              <ion-icon name="list-circle-outline" style="font-size:large;zoom:1;" (click)="login()"></ion-icon>        
-              </ion-col>
-                      
-                      
-      
-          </ion-row>
-
-        </ion-grid>
-      </div>
-
-  </ion-toolbar> 
-</ion-header>
 
 <ion-content class="ion-padding">
- 
-
-         <div style="text-align:center">
-          <h2>Here are your orders </h2>
-          <br>
-
-          <p><b>On 28th-September-2021</b></p>
-         </div>
-             
-      
-                  <ion-grid *ngFor="let item of daBuilding" (click)="pro_clicked($event, item)" style="margin-top: 20px;"  > 
-                  <ion-card style="border-radius:20px">
-                          <ion-row   style="padding-left: 10px;padding-right: 10px ;border-bottom-style: solid;border-bottom-width: 1px;border-color: rgb(207, 211, 211);" >   
-      
-                            <ion-col align-self: stretch size="4" >
-
-                                <div style="margin-top: 10px;text-align: left;">
-                                  <img  style="font-size:x-large;align-self: center;justify-self: right;height:50px"   src = {{anything.avatarimage}}>  <br>
-                                                        
-                                <b>Name: {{item.prodname}} </b> <br>                        
-                                <ion-item text-wrap lines="none">  
-                                  <span style="font-size: small;" >{{item.qty}}  </span>
-                                </ion-item>
-                             
-                             </div>                       
-                            </ion-col>
-                        
-                            <ion-col align-self: center size="8"  style="align-items: left;" >
-                              <div style="margin-top: 10px;text-align: left;">
-                                <b> per : 10 </b> <br>                        
-                                <ion-item text-wrap lines="none">  
-                                  <span style="font-size: small;" >Total:2000 </span>
-                                </ion-item>
-                             
-                             </div>
-                            </ion-col>
-                          </ion-row>
-                            </ion-card> 
-                      </ion-grid>
-                     
+<ion-grid   style="margin-top: 5px;"  > 
                 
-                   
-        
-      
+      <ion-row  style="background-color:snow"  > 
+          
+             <ion-col align-self: center style="justify-content: right;" size="auto" class="centered"    >
+                 <ion-icon style="width:25px;height: 25px;margin-right: 1px;" name="arrow-back-outline" (click)="SearchProduct()"></ion-icon>                
+                  </ion-col>
 
+                 
+                  <ion-col align-self: stretch push-md="1" >
+
+                    <div style="margin-top: 10px;text-align:center">
+                   <p>Quotation</p> 
+                    </div>                     
+                   
+                  </ion-col>
+        
+                 
+                  <ion-col size="auto"  class="centered" style="align-items: right;"   >
+                    <div style="margin-top: 1px;text-align: right;">
+                   <ion-icon style="width:25px;height: 25px;margin-right: 1px;" name="bag-handle-outline"></ion-icon>
+                                                                                                                                                            
+                    </div>  
+                  </ion-col>
+
+
+      </ion-row> 
+  </ion-grid>
+  
+    <ion-card style="border-radius:20px;text-align:center; ">
+          <h3 >Hello Muringe,</h3>
+           
+          <p>Your Quotation </p>
+    </ion-card>
+
+      <ion-card></ion-card>
+
+        <ion-grid *ngFor="let item of daBuilding"  style="margin-bottom: 20px;"   >  
+           <ion-card  class="rcorners"  >
+            <ion-row >
+            
+
+                <ion-col size="3" style="text-align:left" >   
+                    <img style="height: 80px;border-radius: 15px;" src = {{item.avatarimage}}>                                                                                                                                        
+                </ion-col>
+
+                <ion-col >
+                  <ion-row class="align-items-start">
+                    <ion-col  >                     
+                        <ion-label style="font-size: medium;"  > <b>{{item.prodname}}  </b></ion-label>                        
+                    </ion-col>
+
+                    </ion-row>
+                            
+                    <ion-row class="ion-align-self-end">
+                     
+                        <ion-col   class="align-self-end"  > 
+                          <div style="text-align: left;justify-content: start;">
+                            <p style="font-weight: bolder;">Quantity {{ item.pricerangeA }}  </p> 
+                          </div>                       
+                                                 
+                        </ion-col>
+                     
+                        
+                        <ion-col class="align-self-end"   >
+                         <ion-item no-lines>
+                            
+                            <ion-icon name="trash-outline" style="width:35px;height: 35px;margin-right: 1px;color:red"></ion-icon>
+                          </ion-item>
+                      
+                         </ion-col>
+
+                       
+                         
+                   <ion-card>
+                  
+                   </ion-card>
+                  </ion-row>
+                  
+                  
+
+                 
+                </ion-col>            
+            </ion-row>
+      <ion-card style="border-radius:20px">
+      <div></div>
+           <ion-grid   style="margin-top: 1px;background-color:#8BC633"  > 
+                
+      <ion-row  style="background-color:#8BC633"   > 
+          
+             <ion-col align-self: center style="justify-content: right;" size="auto" class="centered"    >
+              <p style="color:snow"><b>Cost Per Unit</b> </p>    
+               <p style="color:snow"><b>Qty Ordered</b> </p>            
+                <p style="color:snow"><b>Total cost</b> </p>          
+                  </ion-col>
+
+                 
+                  <ion-col align-self: stretch push-md="1" >
+
+                    <div style="margin-top: 10px;">
+                      <span style="font-size:large;color:black"> </span> <br>                     
+                   
+                    </div>                     
+                   
+                  </ion-col>
+        
+                 
+                  <ion-col size="auto"  class="centered" style="align-items: right;color:purple"   >
+                    <div style="margin-top: 1px;text-align: right;">
+                   <p style="color:red"><b>Ksh 20</b> </p>      
+                   <p style="color:red"><b>{{item.qty}}</b> </p>     
+                   <p style="color:red"><b>Ksh 1200</b> </p>                                                                                                                                
+                    </div>  
+                  </ion-col>
+
+
+      </ion-row> 
+  </ion-grid>
+          </ion-card>
+          </ion-card>
+        </ion-grid>
+      <div style="text-align:center">
+       <ion-button shape="round" color="danger" (click)="letsviewinvoice()">Go Confirm Order</ion-button>
+      </div>
+        
+          <div style="text-align: center;padding-top:5px; ">
+             Read our 
+                <ion-label  (click)="registration()" style="color:purple">  <u><b>Terms and conditions</b></u> </ion-label>
+          </div>
 </ion-content>
